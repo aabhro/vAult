@@ -1,12 +1,10 @@
 # Vault
-<img width="1365" height="629" alt="image" src="https://github.com/user-attachments/assets/2a7471e9-5974-4d50-b456-b9bc0af8da7a" />
-<img width="1363" height="636" alt="image" src="https://github.com/user-attachments/assets/dbd5299a-3f41-4d98-8409-bbda754fc2d0" />
-<img width="1364" height="634" alt="image" src="https://github.com/user-attachments/assets/f3425467-77b6-4a7e-9c9a-a997fbf50019" />
+<img width="1366" height="658" alt="image" src="https://github.com/user-attachments/assets/4b6f3d04-42db-419f-9ad8-78bb7777aa79" />
+<img width="1366" height="659" alt="image" src="https://github.com/user-attachments/assets/3f0855d5-c6fb-468a-a046-17414db88739" />
+<img width="1366" height="656" alt="image" src="https://github.com/user-attachments/assets/02d166cd-5162-4018-a903-077bf2758499" />
 
 
-
-
-**Your Personal Cinema**: a slick, static web app for discovering movies, TV shows, and anime, then playing them via selectable embed sources. Metadata comes from **TMDB**, and your **watchlist/history live in your browser**.
+**vAult**: a slick, static web app for discovering movies, TV shows, and anime, then playing them via selectable embed sources. Metadata comes from **TMDB**, and your **watchlist/history live in your browser via cached data*.
 
 **Entry points**
 - Landing page: `htdocs/index.html`
