@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+    <script>
+  if (window.location.pathname.endsWith('/index.html')) {
+    const cleanUrl = window.location.pathname.replace('/index.html', '/');
+    window.history.replaceState({}, '', cleanUrl);
+  } else if (window.location.pathname.endsWith('.html')) {
+    const cleanUrl = window.location.pathname.replace('.html', '');
+    window.history.replaceState({}, '', cleanUrl);
+  }
+</script>
+
+    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Vault</title>
+  <link rel="stylesheet" href="style.css?v=4" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <button class="hamburger-btn" id="hamburgerBtn" title="Menu">
+      <i data-lucide="menu"></i>
+    </button>
+  </div>
+
+  <a class="nav-logo" href="index.html">
+    <img src="vault-logo.png" alt="Vault" class="logo-image" />
+  </a>
+
+
+  <div class="nav-divider"></div>
+  <div class="nav-actions">
+    <button class="nav-trending-btn" id="navTrendingBtn" title="Trending">
+      <i data-lucide="trending-up"></i>
+    </button>
+    <button class="nav-search-btn" id="searchOpenBtn" title="Search">
+      <i data-lucide="search"></i>
+    </button>
+  </div>
+</nav>
+
+<div class="hamburger-overlay" id="hamburgerOverlay"></div>
+
+<div class="hamburger-menu" id="hamburgerMenu">
+  <div class="hamburger-header">
+    <button class="hamburger-close" id="hamburgerCloseBtn">
+      <i data-lucide="x"></i>
+    </button>
+  </div>
+
+  <div class="hamburger-content">
+    <div class="hamburger-section">
+      <a class="hamburger-link" href="index.html">
+        <i data-lucide="home"></i>
+        <span>Home</span>
+      </a>
+      <a class="hamburger-link" href="index.html#trendingSection">
+        <i data-lucide="trending-up"></i>
+        <span>Trending</span>
+      </a>
+      <a class="hamburger-link" href="watchlist.html">
+        <i data-lucide="bookmark"></i>
+        <span>Watchlist</span>
+      </a>
+      <a class="hamburger-link" href="lists.html">
+        <i data-lucide="layout-list"></i>
+        <span>My lists</span>
+      </a>
+      <a class="hamburger-link" href="history.html">
+        <i data-lucide="history"></i>
+        <span>History</span>
+      </a>
+    </div>
+
+    <div class="hamburger-divider"></div>
+
+    <div class="hamburger-section">
+      <div class="hamburger-section-title">Genres</div>
+      <a class="hamburger-link genre-link" href="index.html?genre=28">
+        <i data-lucide="zap"></i>
+        <span>Action</span>
+      </a>
+      <a class="hamburger-link genre-link" href="index.html?genre=35">
+        <i data-lucide="smile"></i>
+        <span>Comedy</span>
+      </a>
+      <a class="hamburger-link genre-link" href="index.html?genre=18">
+        <i data-lucide="drama"></i>
+        <span>Drama</span>
+      </a>
+      <a class="hamburger-link genre-link" href="index.html?genre=27">
+        <i data-lucide="ghost"></i>
+        <span>Horror</span>
+      </a>
+      <a class="hamburger-link genre-link" href="index.html?genre=878">
+        <i data-lucide="rocket"></i>
+        <span>Sci-Fi</span>
+      </a>
+      <a class="hamburger-link genre-link" href="index.html?genre=16">
+        <i data-lucide="sparkles"></i>
+        <span>Animation</span>
+      </a>
+    </div>
+
+    <div class="hamburger-divider"></div>
+
+    <div class="hamburger-section">
+      <a class="hamburger-link" href="settings.html">
+        <i data-lucide="settings"></i>
+        <span>Settings</span>
+      </a>
+      <a class="hamburger-link active" href="contact.html">
+        <i data-lucide="mail"></i>
+        <span>Contact</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-wrapper">
+    <div class="search-bar">
+      <i data-lucide="search"></i>
+      <input type="text" id="searchInput" placeholder="Search movies, shows, anime..." autocomplete="off" />
+      <button class="search-close" id="searchCloseBtn"><i data-lucide="x"></i></button>
+    </div>
+    <div class="search-filters" id="searchFilters">
+      <button class="filter-chip active" data-type="multi">All</button>
+      <button class="filter-chip" data-type="movie">Movies</button>
+      <button class="filter-chip" data-type="tv">TV Shows</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="main-content page">
+  <div class="contact-container">
+    
+    <div class="contact-header">
+      <i data-lucide="mail" style="width:32px;height:32px;color:var(--accent);margin-bottom:16px;"></i>
+      <h1>Get in Touch</h1>
+      <p>Feel free to reach out through any of these channels</p>
+    </div>
+
+    <div class="contact-cards">
+      
+      <a href="mailto:vo1dsole@gmail.com" class="contact-card" target="_blank" rel="noopener">
+        <div class="contact-icon gmail-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L12 9.548l8.073-6.055C21.69 2.28 24 3.434 24 5.457z"/>
+          </svg>
+        </div>
+        <div class="contact-info">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">vo1dsole@gmail.com</div>
+          <div class="contact-hint">Send me an email</div>
+        </div>
+        <div class="contact-arrow">
+          <i data-lucide="external-link"></i>
+        </div>
+      </a>
+
+      <a href="https://discord.com/users/abhroscurse" class="contact-card" target="_blank" rel="noopener">
+        <div class="contact-icon discord-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+          </svg>
+        </div>
+        <div class="contact-info">
+          <div class="contact-label">Discord</div>
+          <div class="contact-value">abhroscurse</div>
+          <div class="contact-hint">Message me on Discord</div>
+        </div>
+        <div class="contact-arrow">
+          <i data-lucide="external-link"></i>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="app.js"></script>
+<style>
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: calc(var(--nav-height) + 40px) 32px 80px;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  color: var(--text-heading);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.contact-header p {
+  font-size: 1rem;
+  color: var(--text-sub);
+}
+
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(240,236,228,0.03) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-card:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.contact-card:hover::before {
+  opacity: 1;
+}
+
+.contact-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  background: #2a2a2a;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05), 
+              0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.contact-icon svg {
+  width: 28px;
+  height: 28px;
+  color: #a0a0a0;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+  transition: all 0.3s ease;
+}
+
+.gmail-icon {
+  background: #2a2a2a;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05), 
+              0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.discord-icon {
+  background: #2a2a2a;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05), 
+              0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card:hover .contact-icon {
+  background: #333;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.03), 
+              0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.contact-card:hover .contact-icon svg {
+  color: var(--accent);
+}
+
+.contact-info {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  color: var(--text-sub);
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.contact-value {
+  font-size: 1.1rem;
+  color: var(--text-heading);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.contact-hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.contact-arrow {
+  color: var(--text-sub);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-card:hover .contact-arrow {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 60px 24px;
+  }
+  
+  .contact-header h1 {
+    font-size: 2rem;
+  }
+  
+  .contact-card {
+    padding: 24px;
+    gap: 20px;
+  }
+  
+  .contact-icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .contact-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .contact-value {
+    font-size: 1rem;
+  }
+}
+</style>
+
+  <!-- GlassSurface: SVG feDisplacementMap + Canvas lens warp -->
+  <svg class="nav-glass-filter-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <filter id="nav-glass-filter" color-interpolation-filters="sRGB"
+              x="-2%" y="-10%" width="104%" height="120%">
+        <feImage id="nav-glass-map" x="0" y="0" width="100%" height="100%"
+                 preserveAspectRatio="none" result="map" />
+
+        <!-- Three displacement passes with tight scales: subtle chromatic ab -->
+        <feDisplacementMap in="SourceGraphic" in2="map"
+          scale="-42" xChannelSelector="R" yChannelSelector="G"
+          result="dispR" />
+        <feColorMatrix in="dispR" type="matrix"
+          values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="chanR" />
+
+        <feDisplacementMap in="SourceGraphic" in2="map"
+          scale="-38" xChannelSelector="R" yChannelSelector="G"
+          result="dispG" />
+        <feColorMatrix in="dispG" type="matrix"
+          values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="chanG" />
+
+        <feDisplacementMap in="SourceGraphic" in2="map"
+          scale="-34" xChannelSelector="R" yChannelSelector="G"
+          result="dispB" />
+        <feColorMatrix in="dispB" type="matrix"
+          values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="chanB" />
+
+        <feBlend in="chanR" in2="chanG" mode="screen" result="rg" />
+        <feBlend in="rg"    in2="chanB" mode="screen" result="rgb" />
+        <feGaussianBlur in="rgb" stdDeviation="0.3" />
+      </filter>
+    </defs>
+  </svg>
+
+  <script>
+    (function () {
+      function supportsSVGBackdrop() {
+        var ua = navigator.userAgent;
+        if (/Safari/.test(ua) && !/Chrome/.test(ua)) return false;
+        if (/Firefox/.test(ua)) return false;
+        var d = document.createElement('div');
+        d.style.backdropFilter = 'url(#x)';
+        return d.style.backdropFilter !== '';
+      }
+
+      // Smoothstep: 0→0, 0.5→0.5, 1→1 but with ease-in-out curve
+      function smoothstep(t) {
+        t = Math.max(0, Math.min(1, t));
+        return t * t * (3 - 2 * t);
+      }
+
+      // Check if pixel (px, py) is inside a pill of size (w × h), cap-radius rx
+      function inPill(px, py, w, h, rx) {
+        if (py < 0 || py > h) return false;
+        if (px >= rx && px <= w - rx) return true;
+        var cx = px < rx ? rx : w - rx;
+        var cy = h / 2;
+        var dx = px - cx, dy = py - cy;
+        return dx * dx + dy * dy <= rx * rx;
+      }
+
+      // Build the displacement map via Canvas for pixel-precise R/G channel control.
+      //
+      // HOW IT WORKS (feDisplacementMap math):
+      //   x' = x + scale * (R/255 - 0.5)   ← R=128 → 0 shift, R>128 → right, R<128 → left
+      //   y' = y + scale * (G/255 - 0.5)   ← G=128 → 0 shift, G>128 → down, G<128 → up
+      //
+      // LENS WARP: We want pixels at the left edge pulled left, right edge pushed right,
+      //   top pulled up, bottom pushed down — like refraction through curved glass.
+      //   This means: R = 128 + (nx - 0.5) * warpRange (linear L→R)
+      //               G = 128 + (ny - 0.5) * warpRange (linear T→B)
+      //   But concentrated toward edges via smoothstep so center is nearly neutral.
+      //
+      // CHROMATIC ABERRATION: comes from the 3 feDisplacementMap passes running at
+      //   different scales (-42/-38/-34), not from the map itself.
+      //   With this map that gives ~1.5px R-B separation at the extreme edges.
+      function buildMap(w, h, rx) {
+        var cvs = document.createElement('canvas');
+        cvs.width = w; cvs.height = h;
+        var ctx = cvs.getContext('2d');
+        var img = ctx.createImageData(w, h);
+        var d = img.data;
+
+        var WARP = 0.44;      // warp strength: ± this fraction of half-range
+                              // → R/G range becomes 128 ± (0.44 * 128) = 72–184
+                              // → max shift at edge with scale=-42: 42*(56/255) ≈ 9.2px
+
+        for (var y = 0; y < h; y++) {
+          for (var x = 0; x < w; x++) {
+            var i = (y * w + x) * 4;
+
+            if (!inPill(x, y, w, h, rx)) {
+              // Outside pill: fully neutral (no displacement)
+              d[i]=128; d[i+1]=128; d[i+2]=128; d[i+3]=255;
+              continue;
+            }
+
+            // Signed normalized coords: -1 (left/top) to +1 (right/bottom)
+            var nx = (x / (w - 1) - 0.5) * 2;
+            var ny = (y / (h - 1) - 0.5) * 2;
+
+            // Edge concentration: how far from center (0=center, 1=rim)
+            var absX = Math.abs(nx);
+            var absY = Math.abs(ny);
+
+            // Apply smoothstep so the warp eases near center and accelerates at rim
+            var edgeX = smoothstep(absX);
+            var edgeY = smoothstep(absY);
+
+            // Warp direction: sign(nx) pulls content outward on each side
+            var warpX = Math.sign(nx || 1) * edgeX * WARP;
+            var warpY = Math.sign(ny || 1) * edgeY * WARP;
+
+            // Map to 0-255 (128 = neutral)
+            var r = 128 + warpX * 128;
+            var g = 128 + warpY * 128;
+
+            d[i]   = Math.max(0, Math.min(255, Math.round(r)));
+            d[i+1] = Math.max(0, Math.min(255, Math.round(g)));
+            d[i+2] = 128;   // B unused by the filter (xChannelSelector/yChannelSelector)
+            d[i+3] = 255;
+          }
+        }
+
+        ctx.putImageData(img, 0, 0);
+        return cvs.toDataURL('image/png');
+      }
+
+      function initGlassNav() {
+        var nav = document.getElementById('mainNav');
+        if (!nav) return;
+        var usesSVG = supportsSVGBackdrop();
+        nav.classList.add(usesSVG ? 'glass-svg' : 'glass-fallback');
+        if (!usesSVG) return;
+
+        function updateMap() {
+          var rect = nav.getBoundingClientRect();
+          var w = Math.round(rect.width);
+          var h = Math.round(rect.height);
+          if (w < 2 || h < 2) return;
+          var rx = h / 2;
+          var uri = buildMap(w, h, rx);
+          var el = document.getElementById('nav-glass-map');
+          if (el) el.setAttribute('href', uri);
+        }
+
+        updateMap();
+        window.addEventListener('resize', updateMap, { passive: true });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initGlassNav);
+      } else {
+        initGlassNav();
+      }
+    })();
+  </script>
+
+</body>
+</html>
