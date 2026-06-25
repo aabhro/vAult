@@ -1,131 +1,147 @@
-# Vault
-<img width="1366" height="658" alt="image" src="https://github.com/user-attachments/assets/4b6f3d04-42db-419f-9ad8-78bb7777aa79" />
-<img width="1366" height="659" alt="image" src="https://github.com/user-attachments/assets/3f0855d5-c6fb-468a-a046-17414db88739" />
-<img width="1366" height="656" alt="image" src="https://github.com/user-attachments/assets/02d166cd-5162-4018-a903-077bf2758499" />
+# vAult
 
+<img width="1366" height="658" alt="vAult hero" src="https://github.com/user-attachments/assets/4b6f3d04-42db-419f-9ad8-78bb7777aa79" />
+<img width="1366" height="659" alt="vAult search" src="https://github.com/user-attachments/assets/3f0855d5-c6fb-468a-a046-17414db88739" />
+<img width="1366" height="656" alt="vAult player" src="https://github.com/user-attachments/assets/02d166cd-5162-4018-a903-077bf2758499" />
 
-**vAult**: a slick, static web app for discovering movies, TV shows, and anime, then playing them via selectable embed sources. Metadata comes from **TMDB**, and your **watchlist/history live in your browser via cached data*.
+## Overview
 
-**Entry points**
-- Landing page: `htdocs/index.html`
-- Main app: `htdocs/vault/index.html`
+vAult is a lightweight, client-side web application for discovering and streaming movies, TV shows, and anime. Built entirely with vanilla HTML, CSS, and JavaScript, it requires no frameworks or external dependencies. Content metadata is sourced from TMDB, while your watchlist and viewing history are stored securely in your browser's localStorage.
 
----
+The application provides a seamless experience for browsing trending content, searching across media types, filtering by genre, and switching between multiple playback sources without leaving the interface.
 
 ## Features
 
-- **Trending**: day/week lists
-- **Search**: all, movies, TV
-- **Genre filters**
-- **Watchlist + history**: saved in `localStorage`
-- **Featured hero** on the home screen
-- **Multiple playback sources**: switch any time
-- **Anime support**: Jikan (MyAnimeList) lookup to help pick sub/dub style embeds
-- **Clean URLs + caching** when hosted on Apache via `.htaccess`
+* Trending content discovery with day and week views
+* Unified search across movies, television shows, and anime
+* Genre-based filtering and discovery
+* Persistent watchlist and viewing history saved locally
+* Multiple playback sources with on-the-fly switching
+* Anime-specific support via Jikan integration for subtitle and dubbing preferences
+* Clean URL structure with Apache-based routing
+* Intelligent caching and header optimization
+* Custom error pages for improved user experience
 
----
+## Getting Started
 
-## Project structure
+### Local Development
 
-```text
-vault/
-├─ README.md
-└─ htdocs/
-   ├─ .htaccess
-   ├─ index.html              # landing page (links into /vault)
-   ├─ app.js                  # landing page logic (TMDB backdrop + search handoff)
-   ├─ elements.css            # Nekoweb sitebox styling (hosting-specific)
-   ├─ err/                    # custom error pages (Apache)
-   │  ├─ 400.html 401.html 403.html 404.html 503.html
-   └─ vault/                  # main app
-      ├─ index.html
-      ├─ style.css
-      ├─ app.js               # main app logic
-      ├─ config.js            # runtime config (defaults, maintenance, notification)
-      ├─ watchlist.html
-      ├─ history.html
-      ├─ settings.html
-      ├─ contact.html
-      ├─ maintenance.html
-      └─ vault-logo.png
-```
+To run vAult locally, you have two options.
 
----
-
-## Quick start (local)
-
-### Option A: simple local server (fastest)
-
-This runs the site, but **Apache-only features** (like clean-URL rewrites) will not apply.
+**Python HTTP Server** (for quick testing)
 
 ```bash
 cd htdocs
 python -m http.server 8080
 ```
 
-Then open:
-- `http://localhost:8080/` (landing)
-- `http://localhost:8080/vault/` (app)
+Then visit:
+* http://localhost:8080/ (landing page)
+* http://localhost:8080/vault/ (main application)
 
-### Option B: Apache (recommended)
+Note that Apache-specific features such as clean URL rewriting and cache headers will not function with this method.
 
-Use Apache (XAMPP/WAMP/your own) and point the DocumentRoot to `vault/htdocs`.
+**Apache Server** (recommended for full functionality)
 
-This enables:
-- `.htaccess` **clean URLs** (removes `.html`)
-- header-based **cache control**
-- custom **error pages**
-
----
+Configure Apache with the `vault/htdocs` directory as your DocumentRoot. This enables:
+* Clean URLs without .html extensions
+* Cache control headers
+* Custom error pages
 
 ## Configuration
 
-### TMDB API key (required for metadata)
+### TMDB API Key
 
-There is a `TMDB_KEY` constant in:
-- `htdocs/index.html` (landing backdrop + search redirect)
-- `htdocs/vault/app.js` (main app)
+vAult requires a TMDB API key for content metadata. Update the `TMDB_KEY` constant in both locations:
 
-Replace it with your own TMDB API key (create one in TMDB account settings).
+1. `htdocs/index.html` (for landing page backdrops and search)
+2. `htdocs/vault/app.js` (for the main application)
 
-### Site config (`vault/config.js`)
+You can obtain a free API key from your TMDB account settings.
 
-Runtime toggles live in `htdocs/vault/config.js` via `window.siteConfig`, including:
-- **defaultServer**: default playback source ID
-- **maintenance**: show maintenance mode
-- **heroOverride / heroType**: tweak the featured hero
-- **notification**: optional toast-style announcement
+### Application Settings
 
----
+Runtime configuration is managed through `htdocs/vault/config.js`. The following options are available:
 
-## Notes on data + storage
+* `defaultServer`: Sets the default playback source ID
+* `maintenance`: Toggles maintenance mode display
+* `heroOverride`: Specifies a custom featured content ID
+* `heroType`: Sets the type of featured content (movie or show)
+* `notification`: Displays an optional announcement message
 
-- **Watchlist**: stored in `localStorage` under `vault_watchlist`
-- **History**: stored in `localStorage` under `vault_history`
-- Clearing site data in your browser will reset both.
+## Project Structure
 
----
+```
+vault/
+├── README.md
+├── LICENSE
+└── htdocs/
+    ├── .htaccess
+    ├── index.html
+    ├── app.js
+    ├── elements.css
+    ├── err/
+    │   ├── 400.html
+    │   ├── 401.html
+    │   ├── 403.html
+    │   ├── 404.html
+    │   └── 503.html
+    └── vault/
+        ├── index.html
+        ├── app.js
+        ├── config.js
+        ├── style.css
+        ├── watchlist.html
+        ├── history.html
+        ├── settings.html
+        ├── contact.html
+        └── vault-logo.png
+```
 
-## Deploy
+## Data Storage
 
-This is a static site, so you can deploy it anywhere that serves HTML/CSS/JS.
+vAult uses browser localStorage to maintain user data between sessions.
 
-- **Best experience**: Apache hosting with `.htaccess` support (clean URLs + caching rules).
-- **Static hosts** (no `.htaccess`): still works, but you should link to the explicit `.html` pages (or configure redirects/rewrites on that platform).
+* Watchlist data is stored under the key `vault_watchlist`
+* Viewing history is stored under the key `vault_history`
 
----
+Both datasets persist until the user clears their browser's site data or storage explicitly. No server-side storage is involved.
+
+## Deployment
+
+vAult is a fully static web application and can be deployed to any hosting platform that serves HTML, CSS, and JavaScript files.
+
+**Apache Hosting**: Provides the optimal experience with full support for clean URL rewriting, cache headers, and custom error pages via the included .htaccess file.
+
+**Other Platforms**: The application functions on static hosting services, though you should link to explicit .html pages or configure platform-specific URL rewriting to replicate the clean URL behavior.
 
 ## Troubleshooting
 
-- **Blank posters / metadata not loading**: verify your `TMDB_KEY` is valid and not being blocked by the browser/network.
-- **Clean URLs not working** (e.g. `/vault/settings` 404s): you’re not running behind Apache with `mod_rewrite`, or `.htaccess` isn’t enabled.
-- **Playback doesn’t load**: embed providers can be region-blocked or down; switch sources in-app.
+**Blank poster images or missing metadata**
 
----
+Verify that your TMDB API key is valid and not being blocked by your browser or network. Check the browser console for any API errors.
+
+**Clean URLs returning 404 errors**
+
+This occurs when running outside of Apache with mod_rewrite enabled. Ensure your server has the .htaccess file configured and that rewrite rules are active.
+
+**Playback not loading**
+
+Embed providers may be region-restricted or temporarily unavailable. Try switching to an alternative playback source through the application settings.
+
+## Technology
+
+vAult is built with:
+* HTML (47.7% of codebase)
+* JavaScript (41.3% of codebase)
+* CSS (11% of codebase)
+
+The application contains no external dependencies and runs entirely in the browser.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Disclaimer
 
-This project uses third-party APIs and embeds. You are responsible for complying with the terms of service of:
-- TMDB (metadata)
-- Any embed/playback providers you enable
-- Your hosting platform
+vAult integrates with third-party services and embed providers. Users are responsible for complying with the terms of service of TMDB, any playback providers enabled in the application, and their hosting platform. Use responsibly and ensure compliance with all applicable agreements and regulations.
